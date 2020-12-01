@@ -25,10 +25,9 @@ class App extends React.Component {
                 <h1>Global Data</h1>
                 <Cards data={data}/>
                 <GlobalMetrics />
-
+                <Map />
                 <CountryPicker />
                 <Chart />
-                <Map />
             </div>
         )
     }

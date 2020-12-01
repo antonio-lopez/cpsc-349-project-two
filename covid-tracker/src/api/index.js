@@ -4,6 +4,7 @@ import axios from 'axios';
 // const url = 'https://corona.lmao.ninja/v2/all';
 const url = 'https://disease.sh/v3/covid-19/all';
 
+// ROUTE FOR CARDS.JSX
 export const fetchData = async () => {
     //asynchronous function returns a response from the API and sends it to App.js
     try {
@@ -17,6 +18,7 @@ export const fetchData = async () => {
     }
 }
 
+//  ROUTE FOR GLOBALMETRICS.JSX
 export const fetchCountryData = async () => {
     try {
         const { data } = await axios.get('https://disease.sh/v3/covid-19/countries');
@@ -29,6 +31,28 @@ export const fetchCountryData = async () => {
         }));
 
         return modifiedCountryData;
+    } catch (error) {
+        return error;
+    }
+}
+
+//  ROUTE FOR MAP.JSX
+export const fetchMapData = async () => {
+    try {
+        const { data } = await axios.get('https://disease.sh/v3/covid-19/countries');
+
+        const mapCountryData = data.map((mapData) => ({
+            country: mapData.country,
+            cases: mapData.cases,
+            active: mapData.active,
+            recovered: mapData.recovered,
+            deaths: mapData.deaths,
+            flag: mapData.countryInfo.flag,
+            countryLat: mapData.countryInfo.lat,
+            countryLong: mapData.countryInfo.long
+        }));
+
+        return mapCountryData;
     } catch (error) {
         return error;
     }
