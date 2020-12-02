@@ -48,6 +48,7 @@ const GlobalMetrics = () => {
                             <TableCell>Confirmed</TableCell>
                             <TableCell>Active</TableCell>
                             <TableCell>Deaths</TableCell>
+                            <TableCell>Region</TableCell>
                         </TableRow>
                     </TableHead>
 
@@ -58,6 +59,7 @@ const GlobalMetrics = () => {
                                 <TableCell>{country.cases}</TableCell>
                                 <TableCell>{country.active}</TableCell>
                                 <TableCell>{country.deaths}</TableCell>
+                                <TableCell>{country.region}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

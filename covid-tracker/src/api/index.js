@@ -27,7 +27,8 @@ export const fetchCountryData = async () => {
             country: dailyData.country,
             cases: dailyData.cases,
             active: dailyData.active,
-            deaths: dailyData.deaths
+            deaths: dailyData.deaths,
+            region: dailyData.continent
         }));
 
         return modifiedCountryData;
