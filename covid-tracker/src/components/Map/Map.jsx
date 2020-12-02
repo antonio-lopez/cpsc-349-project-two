@@ -13,7 +13,6 @@ const circleStyle = {
     },
     recovered: {
       hex: "#7dd71d",
-    
       multiplier: 1200,
     },
     deaths: {
@@ -61,7 +60,14 @@ const Map = () => {
                     }
                 >
                     <Popup>
-                        I'm a pop-up, waddup?
+                        <div className={styles.infocontainer}>
+                          <div className={styles.flagdisplay} style={{ backgroundImage: `url(${country.flag})` }}></div>
+                          <div className={styles.namedisplay}>{country.country}</div>
+                          <div className={styles.confirmeddisplay}>Cases: {country.cases}</div>
+                          <div className={styles.activedisplay}>Active: {country.active}</div>
+                          <div className={styles.recovereddisplay}>Recovered: {country.recovered}</div>
+                          <div className={styles.deathsdisplay}>Deaths: {country.deaths}</div>
+                        </div>
                     </Popup>
                 </Circle>
             ))}

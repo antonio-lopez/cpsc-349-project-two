@@ -15,28 +15,28 @@ const Cards = ({ data: { cases, active, recovered, deaths } }) => {
             <Grid container spacing={3} justify="center">
                 <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.confirmed)}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Confirmed (Global)</Typography>
+                        <Typography color="textSecondary" gutterBottom>Confirmed</Typography>
                         <Typography variant="h5">{cases}</Typography>
                         <Typography variant="body2">Number of confirmed cases of Covid-19</Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.active)}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Active (Global)</Typography>
+                        <Typography color="textSecondary" gutterBottom>Active</Typography>
                         <Typography variant="h5">{active}</Typography>
                         <Typography variant="body2">Number of active cases of Covid-19</Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.recovered)}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Recovered (Global)</Typography>
+                        <Typography color="textSecondary" gutterBottom>Recovered</Typography>
                         <Typography variant="h5">{recovered}</Typography>
                         <Typography variant="body2">Number of recoveries from Covid-19</Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.deaths)}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Deaths (Global)</Typography>
+                        <Typography color="textSecondary" gutterBottom>Deaths</Typography>
                         <Typography variant="h5">{deaths}</Typography>
                         <Typography variant="body2">Number of deaths by Covid-19</Typography>
                     </CardContent>
