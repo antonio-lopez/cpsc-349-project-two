@@ -61,23 +61,7 @@ export const fetchMapData = async () => {
 
 //  ROUTE FOR Chart.JSX
 export const fetchGraphData = async () => {
-    //finish working on this!!!!
-
     try {
-        // const { data } = await axios.get('https://disease.sh/v3/covid-19/historical/all?lastdays=120');
-
-        // console.log(data);
-
-        // const graphData = data.map((graphHistory) => ({
-        //     cases: graphHistory.cases,
-        //     deaths: graphHistory.deaths,
-        //     recovered: graphHistory.recovered
-        // }));
-
-        // console.log(graphData.cases);
-
-        // return graphData;
-
         const { data : { cases, deaths, recovered } } = await axios.get('https://disease.sh/v3/covid-19/historical/all?lastdays=120');
         
         return { cases, deaths, recovered };

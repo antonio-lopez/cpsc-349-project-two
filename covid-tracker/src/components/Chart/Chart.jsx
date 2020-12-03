@@ -75,7 +75,7 @@ const Chart = () => {
         const fetchMyAPI = async () => {
             const initialGraphData = await fetchGraphData();
             let chartData = buildChartData(initialGraphData, "cases");
-            console.log(chartData);
+            // console.log(chartData);
             // console.log(graphData.cases);
             // setGraphData(initialGraphData);
             setGraphData(chartData);
@@ -84,7 +84,7 @@ const Chart = () => {
         fetchMyAPI();
     }, [graphData.cases]);
 
-    console.log(graphData.cases);
+    // console.log(graphData.cases);
     // const globalGraphData = Object.values(graphData);
     // console.log(globalGraphData);
 
