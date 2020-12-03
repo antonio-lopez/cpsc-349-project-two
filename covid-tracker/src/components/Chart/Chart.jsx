@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import numeral from "numeral";
 import { fetchGraphData } from '../../api';
+import styles from './Chart.module.css';
 
+// used a parameter for the line graph
 const options = {
+    responsive: true,
+    maintainAspectRatio: true,
     legend: {
         display: false,
     },
@@ -12,7 +16,6 @@ const options = {
             radius: 0,
         },
     },
-    maintainAspectRatio: false,
     tooltips: {
         mode: "index",
         intersect: false,
@@ -48,6 +51,7 @@ const options = {
     },
 };
 
+//builds an array with the results of cases from (current day - previous day)
 const buildChartData = (data, casesType = "cases") => {
     let chartData = [];
     let lastDataPoint;
@@ -87,8 +91,7 @@ const Chart = () => {
 
     return (
         <div>
-            <h1>Chart</h1>
-            <div>
+            <div className={styles.line}>
                 <h3>Changes From Yesterday</h3>
                 {/* Shows changes in cases from two dates
                     Ex. Hover over the date 11/30/20 and you should get +506,064 cases 
