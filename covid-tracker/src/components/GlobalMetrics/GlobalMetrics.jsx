@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchCountryData } from '../../api';
+import numeral from "numeral";
 // Table UI
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -56,9 +57,9 @@ const GlobalMetrics = () => {
                         {countries.map((country) => (
                             <TableRow key={country.country}>
                                 <TableCell component="th" scope="country">{country.country}</TableCell>
-                                <TableCell>{country.cases}</TableCell>
-                                <TableCell>{country.active}</TableCell>
-                                <TableCell>{country.deaths}</TableCell>
+                                <TableCell>{numeral(country.cases).format("0,0")}</TableCell>
+                                <TableCell>{numeral(country.active).format("0,0")}</TableCell>
+                                <TableCell>{numeral(country.deaths).format("0,0")}</TableCell>
                                 <TableCell>{country.region}</TableCell>
                             </TableRow>
                         ))}
