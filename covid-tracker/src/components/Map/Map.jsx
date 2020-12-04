@@ -1,7 +1,8 @@
+// DISPLAYS A RESPONSIVE GLOBAL MAP WITH COUNTRY DATA
+
 import React, { useState, useEffect } from 'react';
 import { fetchMapData } from '../../api';
 import {MapContainer, TileLayer, Popup, Circle } from "react-leaflet";
-// import { showDataOnMap } from "./util";
 import styles from './Map.module.css';
 import 'leaflet/dist/leaflet.css';
 

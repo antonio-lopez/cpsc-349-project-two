@@ -1,15 +1,13 @@
 // functions that fetches data
 import axios from 'axios';
 
-// const url = 'https://corona.lmao.ninja/v2/all';
-const url = 'https://disease.sh/v3/covid-19/all';
 
 // ROUTE FOR CARDS.JSX
-export const fetchData = async () => {
+export const fetchGlobalData = async () => {
     //asynchronous function returns a response from the API and sends it to App.js
     try {
         // destructure data to make syntax easier
-        const { data : { cases, active, recovered, deaths } } = await axios.get(url);
+        const { data : { cases, active, recovered, deaths } } = await axios.get('https://disease.sh/v3/covid-19/all');
         // Cumulative confirmed (cases), active, recovered, and died cases
         return { cases, active, recovered, deaths};
 
@@ -21,13 +19,17 @@ export const fetchData = async () => {
 //  ROUTE FOR GLOBALMETRICS.JSX
 export const fetchCountryData = async () => {
     try {
-        const { data } = await axios.get('https://disease.sh/v3/covid-19/countries');
+        const { data } = await axios.get('https://disease.sh/v3/covid-19/countries?yesterday=true');
 
         const modifiedCountryData = data.map((dailyData) => ({
             country: dailyData.country,
             cases: dailyData.cases,
-            active: dailyData.active,
+            todayCases: dailyData.todayCases,
+            recovered: dailyData.recovered,
+            todayRecovered: dailyData.todayRecovered,
             deaths: dailyData.deaths,
+            todayDeaths: dailyData.todayDeaths,
+            active: dailyData.active,
             region: dailyData.continent
         }));
 

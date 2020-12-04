@@ -1,3 +1,5 @@
+// DISPLAYS TABLE WITH GLOBAL DATA
+
 import React, { useState, useEffect } from 'react';
 import { fetchCountryData } from '../../api';
 import numeral from "numeral";
@@ -47,8 +49,12 @@ const GlobalMetrics = () => {
                         <TableRow>
                             <TableCell>Country</TableCell>
                             <TableCell>Confirmed</TableCell>
-                            <TableCell>Active</TableCell>
+                            <TableCell>(Previous)</TableCell>
+                            <TableCell>Recovered</TableCell>
+                            <TableCell>(Previous)</TableCell>
                             <TableCell>Deaths</TableCell>
+                            <TableCell>(Previous)</TableCell>
+                            <TableCell>Active</TableCell>
                             <TableCell>Region</TableCell>
                         </TableRow>
                     </TableHead>
@@ -58,8 +64,12 @@ const GlobalMetrics = () => {
                             <TableRow key={country.country}>
                                 <TableCell component="th" scope="country">{country.country}</TableCell>
                                 <TableCell>{numeral(country.cases).format("0,0")}</TableCell>
-                                <TableCell>{numeral(country.active).format("0,0")}</TableCell>
+                                <TableCell>{numeral(country.cases - country.todayCases).format("0,0")}</TableCell>
+                                <TableCell>{numeral(country.recovered).format("0,0")}</TableCell>
+                                <TableCell>{numeral(country.recovered - country.todayRecovered).format("0,0")}</TableCell>
                                 <TableCell>{numeral(country.deaths).format("0,0")}</TableCell>
+                                <TableCell>{numeral(country.deaths - country.todayDeaths).format("0,0")}</TableCell>
+                                <TableCell>{numeral(country.active).format("0,0")}</TableCell>
                                 <TableCell>{country.region}</TableCell>
                             </TableRow>
                         ))}
