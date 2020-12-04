@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchMapData } from '../../api';
 import {MapContainer, TileLayer, Popup, Circle } from "react-leaflet";
 import styles from './Map.module.css';
+import numeral from "numeral";
 import 'leaflet/dist/leaflet.css';
 
 //styling for Circles
@@ -64,10 +65,10 @@ const Map = () => {
                         <div className={styles.infocontainer}>
                           <div className={styles.flagdisplay} style={{ backgroundImage: `url(${country.flag})` }}></div>
                           <div className={styles.namedisplay}>{country.country}</div>
-                          <div className={styles.confirmeddisplay}>Cases: {country.cases}</div>
-                          <div className={styles.activedisplay}>Active: {country.active}</div>
-                          <div className={styles.recovereddisplay}>Recovered: {country.recovered}</div>
-                          <div className={styles.deathsdisplay}>Deaths: {country.deaths}</div>
+                          <div className={styles.confirmeddisplay}>Cases: {numeral(country.cases).format("0,0")}</div>
+                          <div className={styles.activedisplay}>Active: {numeral(country.active).format("0,0")}</div>
+                          <div className={styles.recovereddisplay}>Recovered: {numeral(country.recovered).format("0,0")}</div>
+                          <div className={styles.deathsdisplay}>Deaths: {numeral(country.deaths).format("0,0")}</div>
                         </div>
                     </Popup>
                 </Circle>
