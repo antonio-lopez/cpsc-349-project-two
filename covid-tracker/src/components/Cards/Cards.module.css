@@ -8,16 +8,22 @@
     margin: 0 2% !important;
 }
 
-/* STYLE ME PLEASE! */
-/* .confirmed {
-    
+.confirmed {
+    background-color: #adbeff;
+    box-shadow: 1px 1px 10px 1px #adbeff;
 }
+
 .active {
-    
+    background-color: #f8ffad;
+    box-shadow: 1px 1px 10px 1px #f8ffad;
 }
+
 .recovered {
-    
+    background-color: #adffc9;
+    box-shadow: 1px 1px 10px 1px #adffc9;
 }
+
 .deaths {
-    
-} */
+    background-color: #ffadad;
+    box-shadow: 1px 1px 10px 1px #ffadad;
+}
