@@ -47,21 +47,21 @@ const GlobalMetrics = () => {
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Country</TableCell>
-                            <TableCell>Confirmed</TableCell>
-                            <TableCell>(Previous)</TableCell>
-                            <TableCell>Recovered</TableCell>
-                            <TableCell>(Previous)</TableCell>
-                            <TableCell>Deaths</TableCell>
-                            <TableCell>(Previous)</TableCell>
-                            <TableCell>Active</TableCell>
-                            <TableCell>Region</TableCell>
+                            <TableCell><b>Country</b></TableCell>
+                            <TableCell><b>Confirmed</b></TableCell>
+                            <TableCell><b>(Previous)</b></TableCell>
+                            <TableCell><b>Recovered</b></TableCell>
+                            <TableCell><b>(Previous)</b></TableCell>
+                            <TableCell><b>Deaths</b></TableCell>
+                            <TableCell><b>(Previous)</b></TableCell>
+                            <TableCell><b>Active</b></TableCell>
+                            <TableCell><b>Region</b></TableCell>
                         </TableRow>
                     </TableHead>
 
                     <TableBody>
                         {countries.map((country) => (
-                            <TableRow key={country.country}>
+                            <TableRow hover key={country.country}>
                                 <TableCell component="th" scope="country">{country.country}</TableCell>
                                 <TableCell>{numeral(country.cases).format("0,0")}</TableCell>
                                 <TableCell>{numeral(country.cases - country.todayCases).format("0,0")}</TableCell>
