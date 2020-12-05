@@ -12,8 +12,8 @@ class App extends React.Component {
                 <h1>Global Data</h1>
                 <Cards />   {/* DISPLAYS CARDS WITH GLOBAL DATA */}
                 <GlobalMetrics />   {/*DISPLAYS TABLE WITH GLOBAL DATA */}
-                <Chart />   {/* DISPLAYS A RESPONSIVE GRAPH WITH GLOBAL DATA */}
                 <Map />     {/* DISPLAYS A RESPONSIVE GLOBAL MAP WITH COUNTRY DATA */}
+                <Chart />   {/* DISPLAYS A RESPONSIVE GRAPH WITH GLOBAL DATA */}
                 <CountryPicker />
             </div>
         )

@@ -13,9 +13,19 @@
     box-shadow: 1px 1px 10px 1px #adbeff;
 }
 
+.confirmed:hover {
+    background-color: #d6deff;
+    transition: 0.3s;
+}
+
 .active {
     background-color: #f8ffad;
     box-shadow: 1px 1px 10px 1px #f8ffad;
+}
+
+.active:hover {
+    background-color: #fcffd6;
+    transition: 0.3s;
 }
 
 .recovered {
@@ -23,7 +33,17 @@
     box-shadow: 1px 1px 10px 1px #adffc9;
 }
 
+.recovered:hover {
+    background-color: #d1ffe0;
+    transition: 0.3s;
+}
+
 .deaths {
     background-color: #ffadad;
     box-shadow: 1px 1px 10px 1px #ffadad;
+}
+
+.deaths:hover {
+    background-color: #ffcccc;
+    transition: 0.3s;
 }
