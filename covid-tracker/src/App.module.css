@@ -1,8 +1,9 @@
 body {
-    background-color: #f3f3f3;
+    background-color: #555;
+    background-image: linear-gradient(rgb(58, 53, 53), rgb(248, 209, 209));
     font-family: sans-serif;
 }
-
+  
 .container {
     display: flex;
     align-items: center;
