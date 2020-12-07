@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // ROUTE FOR CARDS.JSX
 export const fetchGlobalData = async () => {
-    //asynchronous function returns a response from the API and sends it to App.js
+    //asynchronous function returns a response from the API
     try {
         // destructure data to make syntax easier
         const { data : { cases, active, recovered, deaths } } = await axios.get('https://disease.sh/v3/covid-19/all');
@@ -61,12 +61,45 @@ export const fetchMapData = async () => {
     }
 }
 
-//  ROUTE FOR Chart.JSX
+//  ROUTE FOR CHART.JSX
 export const fetchGraphData = async () => {
     try {
         const { data : { cases, deaths, recovered } } = await axios.get('https://disease.sh/v3/covid-19/historical/all?lastdays=120');
         
         return { cases, deaths, recovered };
+    } catch (error) {
+        return error;
+    }
+}
+
+//  ROUTE FOR COUNTRYPICKER.JSX
+export const fetchCountryForBar = async (country) => {
+    try {
+        const { data } = await axios.get('https://disease.sh/v3/covid-19/countries');
+
+        const countryName = data.map((countryData) => ({
+            country: countryData.country,
+        }));
+
+        return countryName;
+    } catch (error) {
+        return error;
+    }
+}
+
+//  ROUTE FOR APP.JS
+export const fetchCountryDataForBar = async (country) => {
+    const url = 'https://disease.sh/v3/covid-19/countries';
+    let urlWithCountry = url;
+    if (country) {
+        urlWithCountry = `${url}/${country}`;
+    }
+
+    try {
+        const { data: {cases, recovered, deaths} } = await axios.get(urlWithCountry);
+
+        return {cases, recovered, deaths};
+
     } catch (error) {
         return error;
     }
