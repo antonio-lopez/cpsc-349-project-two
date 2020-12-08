@@ -11,6 +11,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+//import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Paper from '@material-ui/core/Paper';
 
 // Table styles
@@ -39,7 +40,11 @@ const GlobalMetrics = () => {
 
     // create an array from the CountryData object
     const countries = Object.values(countryData);
-    
+
+    //this is all that you need to do to sort from highest count to lowest count of infected     
+    countries.sort((a, b) => {
+        return b.cases - a.cases;
+    });
     const classes = useStyles();
     return (
         <Paper className={classes.root}>
