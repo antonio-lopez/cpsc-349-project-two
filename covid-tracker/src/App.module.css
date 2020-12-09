@@ -11,6 +11,12 @@ body {
     flex-direction: column;
 }
 
+.container img{
+    display: flex;
+    width: 50%;
+    height: 50%;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 	background-color: #F5F5F5;

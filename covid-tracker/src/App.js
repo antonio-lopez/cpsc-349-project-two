@@ -1,6 +1,8 @@
 import React from 'react';
 import { Cards, Chart, CountryPicker, GlobalMetrics, Map } from './components'; // comes from the components/index.js export
 import styles from './App.module.css';
+import COVID from './covid.png';
+import MASK from './mask.png';
 
 // USING FUNCTIONAL COMPONENTS WITH HOOKS AND APP IS CLASS BASED
 class App extends React.Component {
@@ -10,6 +12,12 @@ class App extends React.Component {
         return (
             <div className={styles.container}>
                 <h1>COVID-19 Cases</h1>
+                {/*<img src={COVID} alt="covid"/>*/}
+                {/*<img src={MASK} alt="mask"/>*/}
+
+                <img src={COVID} alt="covid"/>
+                <img src={MASK} alt="mask"/>
+
                 <Cards />   {/* DISPLAYS CARDS WITH GLOBAL DATA */}
                 <br /><h1>Timeline of Total Cases per Day</h1>
                 <Chart />   {/* DISPLAYS A RESPONSIVE GRAPH WITH GLOBAL DATA */}
