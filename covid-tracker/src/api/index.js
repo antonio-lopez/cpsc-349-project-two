@@ -23,12 +23,12 @@ export const fetchCountryData = async () => {
 
         const modifiedCountryData = data.map((dailyData) => ({
             country: dailyData.country,
-            cases: dailyData.cases,
-            todayCases: dailyData.todayCases,
+            confirmed: dailyData.cases,
+            previousR: dailyData.cases - dailyData.todayCases,
             recovered: dailyData.recovered,
-            todayRecovered: dailyData.todayRecovered,
+            previousD: dailyData.recovered - dailyData.todayRecovered,
             deaths: dailyData.deaths,
-            todayDeaths: dailyData.todayDeaths,
+            previousA: dailyData.deaths - dailyData.todayDeaths,
             active: dailyData.active,
             region: dailyData.continent
         }));
