@@ -15,7 +15,7 @@ const options = {
     },
     elements: {
         point: {
-            radius: 0,
+            radius: 3,
         },
     },
     tooltips: {
@@ -40,7 +40,7 @@ const options = {
         yAxes: [
             {
                 gridLines: {
-                    display: false,
+                    display: true,
                 },
                 ticks: {
                     // Include a dollar sign in the ticks
