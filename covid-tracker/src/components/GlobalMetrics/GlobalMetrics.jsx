@@ -2,16 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { fetchCountryData } from '../../api';
-import numeral from "numeral";
 // Table UI
 import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import MaterialTable from 'material-table';
 
 // Table styles
 const useStyles = makeStyles({
@@ -42,41 +35,25 @@ const GlobalMetrics = () => {
     
     const classes = useStyles();
     return (
-        <Paper className={classes.root}>
-            <TableContainer className={classes.container}>
-                <Table stickyHeader aria-label="sticky table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Country</TableCell>
-                            <TableCell>Confirmed</TableCell>
-                            <TableCell>(Previous)</TableCell>
-                            <TableCell>Recovered</TableCell>
-                            <TableCell>(Previous)</TableCell>
-                            <TableCell>Deaths</TableCell>
-                            <TableCell>(Previous)</TableCell>
-                            <TableCell>Active</TableCell>
-                            <TableCell>Region</TableCell>
-                        </TableRow>
-                    </TableHead>
+        <MaterialTable
+        title="Reported Cases by Country"
+        columns={[
+          { title: 'Country', field: 'country' },
+          { title: 'Confirmed', field: 'confirmed', type: 'numeric' },
+          { title: '(Previous)', field: 'previousR', type: 'numeric' },
+          { title: 'Recovered', field: 'recovered', type: 'numeric' },
+          { title: '(Previous)', field: 'previousD', type: 'numeric' },
+          { title: 'Deaths', field: 'deaths', type: 'numeric' },
+          { title: '(Previous)', field: 'previousA', type: 'numeric' },
+          { title: 'Active', field: 'active', type: 'numeric' },
+          { title: 'Region', field: 'region' },
+        ]}
 
-                    <TableBody>
-                        {countries.map((country) => (
-                            <TableRow key={country.country}>
-                                <TableCell component="th" scope="country">{country.country}</TableCell>
-                                <TableCell>{numeral(country.cases).format("0,0")}</TableCell>
-                                <TableCell>{numeral(country.cases - country.todayCases).format("0,0")}</TableCell>
-                                <TableCell>{numeral(country.recovered).format("0,0")}</TableCell>
-                                <TableCell>{numeral(country.recovered - country.todayRecovered).format("0,0")}</TableCell>
-                                <TableCell>{numeral(country.deaths).format("0,0")}</TableCell>
-                                <TableCell>{numeral(country.deaths - country.todayDeaths).format("0,0")}</TableCell>
-                                <TableCell>{numeral(country.active).format("0,0")}</TableCell>
-                                <TableCell>{country.region}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </Paper>
+        data={countries}
+        options={{
+          sorting: true
+        }}
+      />
     )
 }
 
