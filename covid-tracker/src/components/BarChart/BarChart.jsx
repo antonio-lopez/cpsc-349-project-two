@@ -28,13 +28,13 @@ const BarChart = ( { data, country }) => {
                     labels: ['Projected Cases', 'Projected Deaths'],
                     datasets: [{
                         label: 'People',
-                        backgroundColor: ['rgba(197, 159, 159, 0.5)', 'rgba(197, 159, 159, 0.5)'],
+                        backgroundColor: ['rgba(255, 222, 87, 0.5)', 'rgba(255, 222, 87, 0.5)'],
                         data: [(data.cases * 10), (data.deaths * 1000)]
                     }]
                 }}
                 options={{
                     legend: { display: false },
-                    title: { display: true, text: `current state in ${country}` }
+                    title: { display: true, text: `projected state in ${country}` }
                 }}
             />
         </div>

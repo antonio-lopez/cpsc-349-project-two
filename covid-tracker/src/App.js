@@ -2,6 +2,7 @@ import React from 'react';
 import { Cards, Chart, CountryPicker, GlobalMetrics, Map, BarChart } from './components'; // comes from the components/index.js export
 import styles from './App.module.css';
 import { fetchCountryDataForBar } from './api';
+// import sdf from './img/covid-s.png'
 
 // USING FUNCTIONAL COMPONENTS WITH HOOKS AND APP IS CLASS BASED
 class App extends React.Component {
@@ -20,13 +21,33 @@ class App extends React.Component {
 
         return (
             <div className={styles.container}>
-                <h1>Global Data</h1>
+                <span className={styles.title}>COVID-19 Cases</span>
+
+                {/* <span className={styles.title}>
+                    <span><img src={sdf} alt="covid"></img>
+                    COVID-19 Cases
+                    </span>
+                </span> */}
+
                 <Cards />   {/* DISPLAYS CARDS WITH GLOBAL DATA */}
-                <GlobalMetrics />   {/*DISPLAYS TABLE WITH GLOBAL DATA */}
+                <span className={styles.cards} />
+
+                <h1>Timeline of Total Cases</h1>
                 <Chart />   {/* DISPLAYS A RESPONSIVE GRAPH WITH GLOBAL DATA */}
+
+                <br /><br /><h1>Global Metrics</h1>
+                <GlobalMetrics />   {/*DISPLAYS TABLE WITH GLOBAL DATA */}
+
+                <br /><br /><h1>Worldwide Map</h1>
                 <Map />     {/* DISPLAYS A RESPONSIVE GLOBAL MAP WITH COUNTRY DATA */}
-                <CountryPicker handleCountryChange={this.handleCountryChange}/> {/* PICKS A COUNTRY AND PASSES IT TO BARCHART */}
-                <BarChart data={data} country={country}/>   {/* DISPLAYS A RESPONSIVE GRAPH WITH A CHOSEN COUNTRY'S DATA */}
+
+                <br /><br /><h1>Country Picker</h1>
+                <div className={styles.countrypicker}>
+                    <center>
+                        <CountryPicker handleCountryChange={this.handleCountryChange}/> {/* PICKS A COUNTRY AND PASSES IT TO BARCHART */}
+                        <BarChart data={data} country={country}/>   {/* DISPLAYS A RESPONSIVE GRAPH WITH A CHOSEN COUNTRY'S DATA */}
+                    </center>
+                </div>
             </div>
         )
     }

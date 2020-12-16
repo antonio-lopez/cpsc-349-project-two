@@ -18,15 +18,17 @@ const CountryPicker = ({handleCountryChange}) => {
     }, [setCountryOption]);
 
     return (
-        <div>
-            <FormControl className={styles.formControl}>
-                <NativeSelect defaultValue="" onChange ={(e) => handleCountryChange(e.target.value)} variant="filled">
-                    <option value="">Country</option>
-                    {countryOption.map((countrySelect, i) => 
-                        <option key={i} value={countrySelect.country} > {countrySelect.country} </option>
-                    )}
-                </NativeSelect>
-            </FormControl>
+        <div className={styles.container}>
+            <div>
+                <FormControl className={styles.formControl}>
+                    <NativeSelect defaultValue="" onChange ={(e) => handleCountryChange(e.target.value)} variant="filled">
+                        <option value="">Country</option>
+                        {countryOption.map((countrySelect, i) => 
+                            <option key={i} value={countrySelect.country} > {countrySelect.country} </option>
+                        )}
+                    </NativeSelect>
+                </FormControl>
+            </div>
         </div>
     )
 }

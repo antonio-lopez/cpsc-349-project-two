@@ -26,28 +26,28 @@ const Cards = () => {
                 <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.confirmed)}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Confirmed</Typography>
-                        <Typography variant="h5">{numeral(globalData.cases).format("0,0")}</Typography>
+                        <Typography variant="h5"><b>{numeral(globalData.cases).format("0,0")}</b></Typography>
                         <Typography variant="body2">Number of confirmed cases of Covid-19</Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.active)}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Active</Typography>
-                        <Typography variant="h5">{numeral(globalData.active).format("0,0")}</Typography>
+                        <Typography variant="h5"><b>{numeral(globalData.active).format("0,0")}</b></Typography>
                         <Typography variant="body2">Number of active cases of Covid-19</Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.recovered)}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>
-                        <Typography variant="h5">{numeral(globalData.recovered).format("0,0")}</Typography>
+                        <Typography variant="h5"><b>{numeral(globalData.recovered).format("0,0")}</b></Typography>
                         <Typography variant="body2">Number of recoveries from Covid-19</Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card} xs={12} md={2} className={cx(styles.card, styles.deaths)}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Deaths</Typography>
-                        <Typography variant="h5">{numeral(globalData.deaths).format("0,0")}</Typography>
+                        <Typography variant="h5"><b>{numeral(globalData.deaths).format("0,0")}</b></Typography>
                         <Typography variant="body2">Number of deaths by Covid-19</Typography>
                     </CardContent>
                 </Grid>

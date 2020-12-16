@@ -15,7 +15,7 @@ const options = {
     },
     elements: {
         point: {
-            radius: 0,
+            radius: 3,
         },
     },
     tooltips: {
@@ -40,7 +40,7 @@ const options = {
         yAxes: [
             {
                 gridLines: {
-                    display: false,
+                    display: true,
                 },
                 ticks: {
                     // Include a dollar sign in the ticks
@@ -92,9 +92,8 @@ const Chart = () => {
 
 
     return (
-        <div>
+        <div className={styles.container}>
             <div className={styles.line}>
-                <h3>Changes From Yesterday</h3>
                 {/* Shows changes in cases from two dates
                     Ex. Hover over the date 11/30/20 and you should get +506,064 cases 
                     [ (11/30/20) : 63,278,795 cases] - [ (11/29/20) : 62,772,731] = 506,064 cases */}
