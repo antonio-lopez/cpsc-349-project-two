@@ -2,7 +2,6 @@ import React from 'react';
 import { Cards, Chart, CountryPicker, GlobalMetrics, Map, BarChart } from './components'; // comes from the components/index.js export
 import styles from './App.module.css';
 import { fetchCountryDataForBar } from './api';
-import covid from './img/covid_virus.png'
 import mask from './img/mask_cover.png';
 
 // USING FUNCTIONAL COMPONENTS WITH HOOKS AND APP IS CLASS BASED
@@ -28,7 +27,6 @@ class App extends React.Component {
                 <Cards />   {/* DISPLAYS CARDS WITH GLOBAL DATA */}
                 <span className={styles.cards} />
 
-                <img src={covid} alt="covid logo"></img>
                 <h1>Timeline of Total Global Cases</h1>
                 <Chart />   {/* DISPLAYS A RESPONSIVE GRAPH WITH GLOBAL DATA */}
 
