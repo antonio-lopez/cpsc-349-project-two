@@ -11,12 +11,6 @@ body {
   flex-direction: column;
 }
 
-.container img{
-  display: flex;
-  width: 50%;
-  height: 50%;
-}
-
 .countrypicker {
   height: 70%;
   width: 70%;
@@ -31,11 +25,11 @@ body {
 .title {
   font-size: 100px;
   font-weight: bold;
-  padding-top: 6rem;
+  padding-top: 1rem;
 }
 
 .cards {
-  padding-bottom: 6rem;
+  padding-bottom: 1rem;
 }
 
 ::-webkit-scrollbar {
