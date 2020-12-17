@@ -10,6 +10,8 @@ A COVID-19 website built in React that uses an API to display statistics in char
 
 This project contains a Node.js Dockerfile for easy deployment. Install Docker Desktop for Windows [here](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
 
+Data taken from the Diseasesh [API](https://disease.sh/docs/#/COVID-19%3A%20Worldometers/get_v3_covid_19_countries)
+
 Dependecies:
 
 * [Material UI](https://www.npmjs.com/package/@material-ui/core) - React components for faster and simpler web development
