@@ -1,6 +1,29 @@
 # CPSC 349 Project Two
 
-## Install
+![](https://raw.githubusercontent.com/antonio-lopez/cpsc-349-project-two/main/covid-tracker/src/img/screenshot.jpg)
+
+A COVID-19 website built in React that uses an API to display statistics in charts, graphs, and a map.
+
+## Getting Started
+
+### Prerequisites 
+
+This project contains a Node.js Dockerfile for easy deployment. Install Docker Desktop for Windows [here](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+
+Dependecies:
+
+* [Material UI](https://www.npmjs.com/package/@material-ui/core) - React components for faster and simpler web development
+* [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
+* [Chart JS](https://www.chartjs.org/) - Simple yet flexible JavaScript charting
+* [Leaflet](https://www.npmjs.com/package/leaflet) - open-source JavaScript library for mobile-friendly interactive maps
+* [Material Table](https://www.npmjs.com/package/material-table) - simple and powerful Datatable for React
+* [Numeral](https://www.npmjs.com/package/numeral) - javascript library for formatting and manipulating numbers
+* [React-Chartjs-2](https://www.npmjs.com/package/react-chartjs-2) - React wrapper for Chart.js 2
+
+will all be installed after `npm i` is run during installation process
+
+
+### Installation
 
 * Download or clone the repo
 
@@ -24,10 +47,12 @@ Docker Desktop - Filesharing notification will pop up. Choose the "Share it" opt
 
 * Open web browser to `http://localhost:3000/`
 
- 
-Team Member | Role | Github
------------- | ------------- | -------------
-Antonio Lopez | Back-end | antonio-lopez
-Javier Melendrez | Back-end | javimelendrez
-Brianna Sharpe | Front-end | briannasharpe
-Jose Alvarado | Front-end | Jalvarado115
+
+## Team Members
+
+Team Member | Github
+------------ | -------------
+Antonio Lopez | antonio-lopez
+Javier Melendrez | javimelendrez
+Brianna Sharpe | briannasharpe
+Jose Alvarado | Jalvarado115
