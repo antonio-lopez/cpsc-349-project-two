@@ -4,8 +4,6 @@
 
 A COVID-19 website built in React that uses an API to display statistics in charts, graphs, and a map.
 
-Presentation video [link](https://youtu.be/8Y6CoHjQXyM)
-
 ## Getting Started
 
 ### Prerequisites 
