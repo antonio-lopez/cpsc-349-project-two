@@ -4,6 +4,8 @@
 
 A COVID-19 website built in React that uses an API to display statistics in charts, graphs, and a map.
 
+### 🏠 [Homepage](https://antonio-covid19-tracker.netlify.app/)
+
 ## Getting Started
 
 ### Prerequisites 
